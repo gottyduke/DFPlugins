@@ -1,0 +1,14 @@
+{
+  "name": "dfpe",
+  "version-string": "21211",
+  "description": "plugin extender loader dll",
+  "homepage": "https://github.com/gottyduke",
+  "license": "MIT",
+  "supports": "windows & x64",
+  "dependencies": [
+    "fmt",
+    "nlohmann-json",
+    "spdlog",
+    "xbyak"
+  ]
+}

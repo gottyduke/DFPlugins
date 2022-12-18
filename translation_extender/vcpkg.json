@@ -1,0 +1,18 @@
+{
+  "name": "dfpe-translation-extender",
+  "version-string": "21211",
+  "description": "plugin extender to support ttf rendering for dwarf fortress steam distribution",
+  "homepage": "https://github.com/gottyduke",
+  "license": "MIT",
+  "supports": "windows & x64",
+  "dependencies": [
+    {
+      "name": "imgui",
+      "features": [
+        "sdl2-binding",
+        "win32-binding"
+      ]
+    },
+    "spdlog"
+  ]
+}

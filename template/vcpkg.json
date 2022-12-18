@@ -1,0 +1,12 @@
+{
+  "name": "dfpe-plugin-template",
+  "version-string": "21211",
+  "description": "basic template plugin for duplication purpose",
+  "homepage": "https://github.com/gottyduke",
+  "license": "MIT",
+  "supports": "windows & x64",
+  "dependencies": [
+    "spdlog",
+    "xbyak"
+  ]
+}
