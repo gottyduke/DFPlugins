@@ -1,0 +1,9 @@
+﻿#pragma once
+
+
+namespace Plugin
+{
+	constexpr auto NAME = "dfpe_loader"sv;
+	constexpr auto VERSION = "@PROJECT_VERSION_MAJOR@-@PROJECT_VERSION_MINOR@-@PROJECT_VERSION_PATCH@"sv;
+}
+

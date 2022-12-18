@@ -1,0 +1,6 @@
+
+build/*
+.vs/
+\!build_last.cmd
+CMakeLists.txt
+vcpkg.json
