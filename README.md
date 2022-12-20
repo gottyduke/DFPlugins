@@ -19,7 +19,7 @@ Plugin Extender for "Dwarf Fortress" steam distribute ver.
 + `/std:c++23` 或 `/std:latest`
 + 环境变量  
    + `VCPKG_ROOT`指向本地vcpkg安装目录(`PATH`).  
-   + `DFPpath`指向本地`"Dwarf Fortress"`安装目录.  
+   + `DFPath`指向本地`"Dwarf Fortress"`安装目录.  
 
 
 ```
