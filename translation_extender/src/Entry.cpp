@@ -3,6 +3,7 @@
 #include "RE/Versions.inl"
 
 #include "Hooks.h"
+#include "SDL/Renderer.h"
 
 
 namespace
@@ -10,7 +11,12 @@ namespace
 	void MessageHandler(DFPE::Interface::Message a_msg) {
 		if (a_msg.type == DFPE::Interface::Event::kPostLoad) {
 			dku::Hook::default_trampoline()->create(dku::numbers::kilobyte(1));
-			Hooks::Commit();
+
+			SDL::Renderer::GetSingleton();
+
+			//Hooks::CreateSurfaceFromTextAtlas::Commit();
+			Hooks::UpperBlit::Commit();
+			Hooks::PostRenderUpdate::Commit();
 		}
 	}
 }

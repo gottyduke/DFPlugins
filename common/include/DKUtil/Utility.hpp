@@ -157,7 +157,7 @@ namespace DKUtil
 			auto resultSize = MultiByteToWideChar(CP_UTF8, 0, &a_str[0], static_cast<int>(a_str.size()), nullptr, 0);
 			std::wstring wStr(resultSize, 0);
 			MultiByteToWideChar(CP_UTF8, 0, &a_str[0], static_cast<int>(a_str.size()), &wStr[0], resultSize);
-			return std::move(wStr);
+			return wStr;
 		}
 
 		[[nodiscard]] inline std::string to_string(const std::wstring& a_wstr)
@@ -166,7 +166,7 @@ namespace DKUtil
 			auto resultSize = WideCharToMultiByte(CP_UTF8, 0, &a_wstr[0], static_cast<int>(a_wstr.size()), nullptr, 0, nullptr, &used);
 			std::string str(resultSize, 0);
 			WideCharToMultiByte(CP_UTF8, 0, &a_wstr[0], static_cast<int>(a_wstr.size()), &str[0], resultSize, nullptr, &used);
-			return std::move(str);
+			return str;
 		}
 
 		// CLib

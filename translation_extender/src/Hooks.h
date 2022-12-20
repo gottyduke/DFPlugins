@@ -10,27 +10,28 @@
 
 namespace Hooks
 {
-	struct Prolog : public Xbyak::CodeGenerator
+	namespace CreateSurfaceFromTextAtlas
 	{
-		Prolog()
-		{
-			mov(rdx, ptr[rbp - 0x4D]);
-		}
-	};
+		SDL::Surface* thunk(const void* a_renderer, SDL::df_packed_ascii* a_attribute) noexcept;
+
+		static inline RE::Relocation<decltype(thunk)> func;
+
+		void Commit() noexcept;
+	} // namespace CreateSurfaceFromTextAtlas
 
 
-	struct Epilog : public Xbyak::CodeGenerator
+	namespace UpperBlit
 	{
-		Epilog()
-		{
+		void thunk(SDL::Surface* a_srcSurface, SDL::df_packed_ascii* a_pack, SDL::Surface* a_dstSurface, SDL::Rect* a_dstRect) noexcept;
+		
+		void Commit() noexcept;
+	} // namespace UpperBlit
 
-		}
-	};
 
+	namespace PostRenderUpdate
+	{
+		void thunk() noexcept;
 
-	void Hook_SDL_UpperBlit(SDL::Surface* a_srcSurface, std::int8_t a_ascii, SDL::Surface* a_dstSurface, SDL::Rect* a_dstRect) noexcept;
-
-	static inline RE::Relocation<decltype(Hook_SDL_UpperBlit)> SDL_UpperBlit;
-
-	void Commit() noexcept;
+		void Commit() noexcept;
+	} // namespace PostRenderUpdate
 } // namespace Hooks
